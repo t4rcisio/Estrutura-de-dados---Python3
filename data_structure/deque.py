@@ -8,16 +8,23 @@ class Deque:
         self.__deque_lenght +=1
     
     def putBotton(self, val):
+        
         self.__deque.insert(0,val)
-        self.__deque_lenght =+1
+        self.__deque_lenght +=1
     
     def popTop(self):
-        self.__deque.pop()
-        self.__deque_lenght -=1
+        if(self.__deque_lenght != 0):
+            self.__deque.pop()
+            self.__deque_lenght -=1
+        else:
+            print("Nothing to do. Deque empty")
     
     def popBotton(self):
-        self.__deque.pop(0)
-        self.__deque_lenght -=1
+        if(self.__deque_lenght != 0):
+            self.__deque.pop(0)
+            self.__deque_lenght -=1
+        else:
+            print("Nothing to do. Deque empty")
 
     def top(self):
         return self.__deque[-1]
@@ -43,3 +50,9 @@ print(deque.deque())
 print(deque.top())
 print(deque.botton())
 
+print(deque.lenght())
+
+deque.popBotton()
+deque.popTop()
+
+print(deque.deque())
