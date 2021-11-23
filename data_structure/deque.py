@@ -27,6 +27,7 @@ class Deque:
             print("Nothing to do. Deque empty")
 
     def top(self):
+
         return self.__deque[-1]
     
     def botton(self):
@@ -56,3 +57,9 @@ deque.popBotton()
 deque.popTop()
 
 print(deque.deque())
+
+
+for i in range(deque.lenght()):
+    deque.popBotton()
+
+print(deque.lenght())
