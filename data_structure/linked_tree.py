@@ -142,8 +142,6 @@ class Tree:
                 self.__lenght_tree -=1
                 if(current_node.getLabel() != self.__head.getLabel()):
                     above_node = current_node.getAbove()
-                    above_node_lower = lower_node.getAbove()
-                    above_node_lower.setLeft(None)
 
                     lower_node.setAbove(above_node)
                     if(above_node.getLabel() > lower_node.getLabel()):
@@ -151,13 +149,23 @@ class Tree:
                     else:
                         above_node.setRight(lower_node)
                     
+                
                     lower_node.setLeft(current_node.getLeft())
-                    lower_node.setRight(current_node.getRight())
+                    if(lower_node != current_node.getRight()):
+                        lower_node.setRight(current_node.getRight())
+
+                    
                 else:
                     left_node = current_node.getLeft()
+                    right_node = current_node.getRight()
                     left_node.setAbove(lower_node)
+                    above_node = lower_node.getAbove()
+                    above_node.setLeft(None)
+
                     lower_node.setAbove(None)
                     lower_node.setLeft(left_node)
+                    lower_node.setRight(right_node)
+                    
                     self.__head = lower_node
 
 
@@ -169,39 +177,33 @@ class Tree:
 
 
 tree = Tree()
-node = Node(10)
-tree.put(node)
-
-node = Node(15)
-tree.put(node)
-
-node = Node(5)
-tree.put(node)
-
-node = Node(20)
-tree.put(node)
-
-node = Node(4)
-tree.put(node)
-
 node = Node(8)
 tree.put(node)
-
-node = Node(25)
+node = Node(3)
 tree.put(node)
-
-node = Node(26)
+node = Node(1)
 tree.put(node)
-
-node = Node(22)
+node = Node(6)
 tree.put(node)
-
-node = Node(19)
+node = Node(4)
 tree.put(node)
-
+node = Node(7)
+tree.put(node)
+node = Node(11)
+tree.put(node)
+node = Node(14)
+tree.put(node)
+node = Node(13)
+tree.put(node)
+node = Node(10)
+tree.put(node)
+node = Node(9)
+tree.put(node)
 tree.show()
 
-node = Node(10)
+
+
+node = Node(8)
 tree.pop(node)
 print("\n")
 tree.show()
