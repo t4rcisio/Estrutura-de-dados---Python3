@@ -27,7 +27,7 @@ class Graph:
             self.__matrix[row][column] = 0
             self.__matrix[column][row] = 0
         else:
-            print("Invalid line or column paramers")
+            print("Invalid line or column parameters")
         
     def hasCorner(self, row, column):
         if self.__coordinateVerify(row, column):
